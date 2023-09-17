@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Usuários</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <style>
+          /* Estilo do botão de editar */
+      .edit-btn {
+          background-color: #2196F3;
+      }
+      
+      /* Estilo do botão de apagar */
+      .delete-btn {
+          background-color: #f44336;
+      }
+      /* Estilo da tabela */
+      table {
+          border-collapse: collapse;
+          width: 100%;
+          margin: 20px 0;
+          font-size: 1em;
+          font-family: Arial, sans-serif;
+      }
+      
+      th,
+      td {
+          padding: 10px;
+          text-align: left;
+          vertical-align: middle;
+          border: 1px solid #ccc;
+      }
+      
+      th {
+          background-color: #f8f8f8;
+          font-weight: bold;
+          text-transform: uppercase;
+      }
+      
+      /* Estilo dos botões */
+      .btn {
+          display: inline-block;
+          padding: 10px;
+          border: none;
+          border-radius: 4px;
+          background-color: #4CAF50;
+          color: #fff;
+          font-size: 1em;
+          font-weight: bold;
+          text-decoration: none;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+      }
+      
+      .btn:hover {
+          background-color: #3e8e41;
+      }
+      
+      /* Estilo dos botões de ação */
+      .action-btns {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      
+      .edit-btn,
+      .delete-btn {
+          margin-right: 10px;
+      }
+      
+      .edit-btn {
+          background-color: #2196F3;
+      }
+      
+      .delete-btn {
+          background-color: #f44336;
+      }
+      
+      /* Estilo do formulário de adicionar usuário */
+      form {
+          display: flex;
+          flex-direction: column;
+          max-width: 400px;
+          margin: 20px auto;
+      }
+      
+      form label {
+          margin-bottom: 5px;
+          font-size: 1.2em;
+          font-weight: bold;
+      }
+      
+      form input[type="text"],
+      form input[type="email"] {
+          padding: 10px;
+          margin-bottom: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          font-size: 1.2em;
+      }
+      
+      form input[type="submit"] {
+          padding: 10px;
+          border: none;
+          border-radius: 4px;
+          background-color: #4CAF50;
+          color: #fff;
+          font-size: 1.2em;
+          font-weight: bold;
+          text-align: center;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+      }
+      
+      form input[type="submit"]:hover {
+          background-color: #3e8e41;
+      }
+      
+  </style>
+    <h1>Lista de Pedidos</h1>
+    <table>
+        <tr>
+            <th>Cliente:</th>
+            <th>CNPJ OU CPF:</th>
+            <th>Marca:</th>
+            <th>Cidade:</th>
+            <th>Bairro:</th>
+            <th>Telefone:</th>
+            <th>Vendedor:</th>
+            <th>Data de Prospecção:</th>
+            <th>Nº do Pedido:</th>
+            <th>Observação:</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user[0] }}</td>
+            <td>{{ user[1] }}</td>
+            <td>{{ user[2] }}</td>
+            <td>{{ user[3] }}</td>
+            <td>{{ user[4] }}</td>
+            <td>{{ user[5] }}</td>
+            <td>{{ user[6] }}</td>
+            <td>{{ user[7] }}</td>
+            <td>{{ user[8] }}</td>
+            <td>{{ user[9] }}</td>
+            <!--<td><a href="/editar/{{ user[0] }}" class="btn edit-btn">Editar</a></td>
+            <td><a href="/apagar/{{ user[0] }}" class="btn delete-btn">Apagar</a></td>-->
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
